@@ -16,7 +16,7 @@ function Search({ query_str, ...props }) {
 
   function performSearch() {
     axios
-      .get('/search/v2', {
+      .get('/search/v1', {
         params: {
           token,
           query_str,

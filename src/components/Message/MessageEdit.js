@@ -47,7 +47,7 @@ function MessageEdit({
         /**
          * Default message edit behaviour
          */
-        axios.put(`/message/edit/v2`, {
+        axios.put(`/message/edit/v1`, {
             token,
             message_id: Number.parseInt(message_id),
             message,

@@ -22,7 +22,7 @@ function Profile({ profile }) {
 
   React.useEffect(() => {
     axios
-      .get(`/user/profile/v2`, { params: { token, u_id: profile } })
+      .get(`/user/profile/v1`, { params: { token, u_id: profile } })
       .then(({ data }) => {
         console.log(data);
         const { user } = data;
@@ -36,7 +36,7 @@ function Profile({ profile }) {
 
   function updateName(name_last, name_first) {
     axios
-      .put(`/user/profile/setname/v2`, { token, name_first, name_last })
+      .put(`/user/profile/setname/v1`, { token, name_first, name_last })
       .then(() => {
         console.log('all good');
       })
@@ -47,7 +47,7 @@ function Profile({ profile }) {
 
   function updateEmail(email) {
     axios
-      .put(`/user/profile/setemail/v2`, { token, email })
+      .put(`/user/profile/setemail/v1`, { token, email })
       .then(() => {
         console.log('all good');
       })
