@@ -174,9 +174,9 @@ function AddMessage({ channel_id = -1, dm_id = -1 }) {
       .catch((err) => { });
   }
 
-  // useStep(checkStandupActive, [currentMessage] /* check when user is typing */);
+  useStep(checkStandupActive, [currentMessage] /* check when user is typing */);
 
-  // React.useEffect(checkStandupActive, [channel_id]);
+  React.useEffect(checkStandupActive, [channel_id]);
 
   const keyDown = (e) => {
     if (e.key === 'Enter' && !e.getModifierState('Shift')) {

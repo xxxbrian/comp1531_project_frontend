@@ -12,27 +12,27 @@ function UserStats() {
   const [dmsData, setDmsData] = React.useState([]);
   const [messagesData, setMessagesData] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   axios
-  //     .get(`/user/stats/v1`, { params: { token } })
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //       const { user_stats } = data;
-  //       setInvolvementRate(user_stats['involvement_rate']);
-  //       setChannelsData(user_stats['channels_joined'].map((obj) => {
-  //         return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_channels_joined'] };
-  //       }));
-  //       setDmsData(user_stats['dms_joined'].map((obj) => {
-  //         return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_dms_joined'] };
-  //       }));
-  //       setMessagesData(user_stats['messages_sent'].map((obj) => {
-  //         return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_messages_sent'] };
-  //       }));
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     })
-  // }, [token]);
+  React.useEffect(() => {
+    axios
+      .get(`/user/stats/v1`, { params: { token } })
+      .then(({ data }) => {
+        console.log(data);
+        const { user_stats } = data;
+        setInvolvementRate(user_stats['involvement_rate']);
+        setChannelsData(user_stats['channels_joined'].map((obj) => {
+          return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_channels_joined'] };
+        }));
+        setDmsData(user_stats['dms_joined'].map((obj) => {
+          return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_dms_joined'] };
+        }));
+        setMessagesData(user_stats['messages_sent'].map((obj) => {
+          return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_messages_sent'] };
+        }));
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }, [token]);
 
   return (
     <>

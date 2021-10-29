@@ -12,27 +12,27 @@ function WorkspaceStats() {
   const [dmsData, setDmsData] = React.useState([]);
   const [messagesData, setMessagesData] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   axios
-  //     .get(`/users/stats/v1`, { params: { token } })
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //       const { workspace_stats } = data;
-  //       setUtilizationRate(workspace_stats['utilization_rate']);
-  //       setChannelsData(workspace_stats['channels_exist'].map((obj) => {
-  //         return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_channels_exist'] };
-  //       }));
-  //       setDmsData(workspace_stats['dms_exist'].map((obj) => {
-  //         return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_dms_exist'] };
-  //       }));
-  //       setMessagesData(workspace_stats['messages_exist'].map((obj) => {
-  //         return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_messages_exist'] };
-  //       }));
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     })
-  // }, [token]);
+  React.useEffect(() => {
+    axios
+      .get(`/users/stats/v1`, { params: { token } })
+      .then(({ data }) => {
+        console.log(data);
+        const { workspace_stats } = data;
+        setUtilizationRate(workspace_stats['utilization_rate']);
+        setChannelsData(workspace_stats['channels_exist'].map((obj) => {
+          return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_channels_exist'] };
+        }));
+        setDmsData(workspace_stats['dms_exist'].map((obj) => {
+          return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_dms_exist'] };
+        }));
+        setMessagesData(workspace_stats['messages_exist'].map((obj) => {
+          return { x: new Date(obj['time_stamp'] * 1000), y: obj['num_messages_exist'] };
+        }));
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }, [token]);
 
   return (
     <>

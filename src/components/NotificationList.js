@@ -13,20 +13,20 @@ export default function NotificationList() {
   const buttonRef = React.useRef();
   const token = React.useContext(AuthContext);
 
-  // React.useEffect(() => {
-  //   const interval = setInterval(async () => {
-  //     axios
-  //       .get('/notifications/get/v1', {
-  //         params: { token },
-  //       })
-  //       .then(({ data }) => {
-  //         setNotifs(data.notifications);
-  //       })
-  //       .catch((err) => { });
-  //   }, 2000);
+  React.useEffect(() => {
+    const interval = setInterval(async () => {
+      axios
+        .get('/notifications/get/v1', {
+          params: { token },
+        })
+        .then(({ data }) => {
+          setNotifs(data.notifications);
+        })
+        .catch((err) => { });
+    }, 2000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleClick = (event) => setOpen(true);
   const handleClose = () => setOpen(false);
