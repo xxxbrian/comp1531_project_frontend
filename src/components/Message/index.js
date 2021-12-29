@@ -23,7 +23,7 @@ function Message({
   message_id,
   message = '',
   u_id,
-  time_created,
+  time_sent,
   is_unread = false,
   is_pinned = false,
   reacts = [] /* [{ react_id, u_ids }] */,
@@ -91,7 +91,7 @@ function Message({
                 <>
                   <span>{fullName}</span>
                   <span style={{ paddingLeft: 10, fontSize: 10 }}>
-                    {timeago(time_created * 1000)}
+                    {timeago(time_sent * 1000)}
                   </span>
                 </>
               }
