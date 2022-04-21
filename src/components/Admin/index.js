@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import SetUserPermissionsDialog from './SetUserPermissionsDialog';
 import UserRemoveDialog from './UserRemoveDialog';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 export default function Admin() {
 
@@ -15,15 +17,15 @@ export default function Admin() {
 
   return (
     <div>
-      <Button
+      <IconButton
         ref={buttonRef}
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
         color="inherit"
       >
-        Admin
-      </Button>
+        <AdminPanelSettingsIcon />
+      </IconButton>
       <Menu
         id="simple-menu"
         anchorEl={buttonRef.current}

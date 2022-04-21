@@ -57,9 +57,9 @@ function SideMenu({ container, children, open, setOpen }) {
           open
         >
           <div className={classes.toolbar}>
-            <Link to="/" style={{ color: 'black', textDecoration: 'none' }}>
+            <Link to="/" style={{ color: 'LightBlue', textDecoration: 'none' }}>
               <Typography variant="h5" noWrap>
-                Streams
+                Seams DINGO
               </Typography>
             </Link>
           </div>

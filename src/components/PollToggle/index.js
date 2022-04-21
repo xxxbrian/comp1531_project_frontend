@@ -43,7 +43,7 @@ function PollToggle() {
     };
 
     return (<>
-        <ButtonGroup
+        <ButtonGroup 
             variant="contained"
             color="primary"
             ref={anchorRef}

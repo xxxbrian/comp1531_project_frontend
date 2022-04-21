@@ -17,6 +17,7 @@ import PollToggle from '../PollToggle';
 import Admin from '../Admin';
 import SearchBar from '../Search/SearchBar';
 import NotificationList from '../NotificationList';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -55,7 +56,7 @@ function Header({ handleMenuToggle = () => { } }) {
   }
 
   return (
-    <AppBar position="fixed" className={classes.appBar}>
+    <AppBar position="fixed" className={classes.appBar}  color="transparent" elevation={0}>
       <Toolbar>
         {!matches && (
           <>
@@ -70,7 +71,7 @@ function Header({ handleMenuToggle = () => { } }) {
             </IconButton>
             <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
               <Typography variant="h5" noWrap>
-                Streams
+                DINGO
               </Typography>
             </Link>
           </>
@@ -80,18 +81,18 @@ function Header({ handleMenuToggle = () => { } }) {
         </div>
         <div style={{ display: 'flex' }}>
           <SearchBar />
-          <PollToggle />
+          {/* <PollToggle /> */}
           <NotificationList />
           <Admin />
-          <Button
+          <IconButton
             color="inherit"
             className={classes.logoutButton}
             onClick={() => {
               setLoggedOut(true);
             }}
           >
-            Logout
-          </Button>
+            <LogoutIcon />
+          </IconButton>
         </div>
       </Toolbar>
     </AppBar>

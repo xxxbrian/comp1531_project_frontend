@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(1),
         width: 'auto',
-        marginRight: theme.spacing(2),
+        marginRight: theme.spacing(7),
         },
     },
     searchIcon: {
@@ -37,9 +37,9 @@ const useStyles = makeStyles(theme => ({
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
-        width: 120,
+        width: 280,
         '&:focus': {
-            width: 200,
+            width: 350,
         },
         },
     },
@@ -59,7 +59,7 @@ function SearchBar(props) {
                 <SearchIcon />
             </div>
             <InputBase
-                placeholder="Search…"
+                placeholder="Search Messagess..."
                 classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,

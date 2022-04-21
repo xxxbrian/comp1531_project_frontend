@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import IconButton from '@mui/material/IconButton';
+import InboxIcon from '@mui/icons-material/Inbox';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import AuthContext from '../AuthContext';
@@ -36,6 +38,7 @@ export default function NotificationList() {
         onClick={handleClick}
         color="inherit"
       >
+        <InboxIcon />
         Notifications
       </Button>
       <Menu
